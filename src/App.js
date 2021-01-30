@@ -4,14 +4,19 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Title from "./components/Title";
 import HomeCard from "./components/HomeCard";
+import LandmarkCard from "./components/LandmarkCard";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Container>
       <Navigation />
       <Title />
-      <HomeCard />
+      <Switch>
+        <Route path="/landmark" component={LandmarkCard} />
+        <Route path="/home" component={HomeCard} />
+      </Switch>
       <Footer />
     </Container>
   );

@@ -3,10 +3,10 @@ import { Container, Nav, Row, Col } from "react-bootstrap";
 
 export default function Navigation() {
   return (
-    <Container className="border-md-right border-md-left border-md-top navContainer">
+    <Container className="navContainer">
       <Row>
         <Col>
-          <Nav className="navBar">
+          <Nav sticky="top" className="navBar">
             <Nav.Item>
               <Nav.Link href="/home">
                 <svg

@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function HomeCard() {
   return (
-    <Container className="border-md-right border-md-left homeContainer">
+    <Container className="homeContainer">
       <Row>
         <Col>
           <Card className="gameCard">
@@ -26,15 +27,16 @@ export default function HomeCard() {
                 One minute to guess as many landmarks as you can.
               </Card.Text>
               <div className="btnContainer">
-                <Button
-                  style={{
-                    backgroundColor: "transparent",
-                    color: "white",
-                    width: "200px",
-                  }}
-                >
-                  Play
-                </Button>
+                <Link exact path="/landmark">
+                  <Button
+                    style={{
+                      color: "white",
+                      width: "200px",
+                    }}
+                  >
+                    Play
+                  </Button>
+                </Link>
               </div>
             </Card.Body>
           </Card>
