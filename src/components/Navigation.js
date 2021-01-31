@@ -6,7 +6,7 @@ export default function Navigation() {
     <Container className="navContainer">
       <Row>
         <Col>
-          <Nav sticky="top" className="navBar">
+          <Nav className="navBar">
             <Nav.Item>
               <Nav.Link href="/home">
                 <svg

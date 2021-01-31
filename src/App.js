@@ -10,12 +10,12 @@ import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Container>
+    <Container fluid>
       <Navigation />
       <Title />
       <Switch>
         <Route path="/landmark" component={LandmarkCard} />
-        <Route path="/home" component={HomeCard} />
+        <Route path="/" component={HomeCard} />
       </Switch>
       <Footer />
     </Container>
