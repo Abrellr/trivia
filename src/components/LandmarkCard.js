@@ -1,14 +1,16 @@
 import React from "react";
 import { Container, Row, Card } from "react-bootstrap";
 
-export default function LandmarkCard() {
+export default function LandmarkCard(props) {
+  console.log(props);
   return (
     <Container fluid>
       <Row className="cardRow">
-        <Card className="landmarkCard">
+        <Card key={props.id} className="landmarkCard">
           <Card.Body>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+            <Card.Img variant="top" src={props.image} />
           </Card.Body>
+          <button onClick={props.nextLandmark}>Next</button>
         </Card>
       </Row>
     </Container>

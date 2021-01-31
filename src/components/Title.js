@@ -9,11 +9,11 @@ export default function Title() {
         <svg className="text" viewBox="0 0 600 300">
           <text
             id="shiny"
-            text-anchor="middle"
+            textAnchor="middle"
             x="50%"
             y="50%"
             dy=".35em"
-            class="text"
+            className="text"
             fill="url(#gr-simple)"
           >
             Trivia Wars
@@ -26,17 +26,11 @@ export default function Title() {
             x2="100%"
             y2="100%"
           >
-            <stop stop-color="hsl(50, 100%, 70%)" offset="10%" />
-            <stop stop-color="hsl(320, 100%, 50%)" offset="90%" />
+            <stop stopColor="hsl(50, 100%, 70%)" offset="10%" />
+            <stop stopColor="hsl(320, 100%, 50%)" offset="90%" />
           </linearGradient>
         </svg>
       </Row>
     </Container>
   );
 }
-
-/* <svg viewBox="0 0 600 150">
-          <text textAnchor="middle" x="50%" y="60%" fill="transparent">
-            Trivia Wars
-          </text>
-        </svg> */
