@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Title from "./components/Title";
@@ -10,14 +10,11 @@ import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
-  var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length)];
-  console.log(randLandmark);
+  const [state, setState] = useState(landmarks[0]);
 
-  const [nextLandmark, setNextLandmark] = useState();
-
-  // function next() {
-  //   setNextLandmark(Math.floor(Math.random() * landmarks.length));
-  // }
+  function next() {
+    setState(landmarks[Math.floor(Math.random() * landmarks.length)]);
+  }
 
   return (
     <Container fluid>
@@ -25,12 +22,14 @@ function App() {
       <Title />
       <Switch>
         <Route exact path="/landmark">
-          <LandmarkCard
-            key={randLandmark.id}
-            name={randLandmark.name}
-            image={randLandmark.image}
-            //nextLandmark={nextLandmark()}
-          />
+          <LandmarkCard key={state.id} name={state.name} image={state.image} />
+          <Button
+            onClick={() => {
+              next();
+            }}
+          >
+            Next
+          </Button>
           );)
         </Route>
         <Route path="/" component={HomeCard} />
