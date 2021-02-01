@@ -1,17 +1,16 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Card } from "react-bootstrap";
 
-export default function LandmarkCard() {
+export default function LandmarkCard(props) {
+  console.log(props);
   return (
-    <Container className="landmarkContainer">
-      <Row>
-        <Col>
-          <Card className="landmarkCard">
-            <Card.Body>
-              <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-            </Card.Body>
-          </Card>
-        </Col>
+    <Container fluid>
+      <Row className="cardRow">
+        <Card key={props.id} className="landmarkCard">
+          <Card.Body>
+            <Card.Img variant="top" src={props.image} />
+          </Card.Body>
+        </Card>
       </Row>
     </Container>
   );
