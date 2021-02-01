@@ -9,7 +9,6 @@ export default function LandmarkCard(props) {
         <Card key={props.id} className="landmarkCard">
           <Card.Body>
             <Card.Img variant="top" src={props.image} />
-            <Card.Title>{props.name}</Card.Title>
           </Card.Body>
         </Card>
       </Row>

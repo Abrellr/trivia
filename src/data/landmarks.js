@@ -1,6 +1,11 @@
 import sphinx from "../img/sphinx.png";
 import eiffel from "../img/eiffel.png";
 import pisa from "../img/pisa.png";
+import petra from "../img/petra.jpg";
+import merlion from "../img/merlion.jpg";
+import greatwall from "../img/greatwall.jpg";
+import tajmahal from "../img/tajmahal.jpg";
+import machu_picchu from "../img/machu_picchu.jpg";
 
 const landmarks = [
   {
@@ -55,31 +60,31 @@ const landmarks = [
     id: 9,
     name: "Machu Picchu",
     location: "Peru",
-    image: sphinx,
+    image: machu_picchu,
   },
   {
     id: 10,
     name: "Taj Mahal",
     location: "Agra, India",
-    image: eiffel,
+    image: tajmahal,
   },
   {
     id: 11,
     name: "The great wall",
     location: "China",
-    image: pisa,
+    image: greatwall,
   },
   {
     id: 12,
     name: "Petra",
     location: "Jordania",
-    image: sphinx,
+    image: petra,
   },
   {
     id: 13,
     name: "Merlion Park",
     location: "Singapore",
-    image: pisa,
+    image: merlion,
   },
 ];
 

@@ -23,7 +23,7 @@ export default function HomeCard() {
               </svg>
             </Card.Title>
             <Card.Text className="gameDesc">
-              One minute to guess as many landmarks as you can.
+              Test your knowledge by guessing the country of this landmark.
             </Card.Text>
             <div className="btnContainer">
               <Link to={"/landmark"}>
