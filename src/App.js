@@ -24,7 +24,7 @@ function App() {
       <Title />
       <Switch>
         <Route exact path="/landmark">
-          <LandmarkCard key={state.id} name={state.name} image={state.image} />
+          <LandmarkCard key={state.id} image={state.image} />
           <Row className="btnRow">
             <Button
               onClick={() => {
