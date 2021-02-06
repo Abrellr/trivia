@@ -8,7 +8,7 @@ export default function Navigation() {
         <Col>
           <Navbar className="navBar sticky-nav">
             <Nav.Item>
-              <Nav.Link className="homeIcon" href="/home">
+              <Nav.Link className="homeIcon" href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
