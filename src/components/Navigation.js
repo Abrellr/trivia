@@ -1,14 +1,14 @@
 import React from "react";
-import { Container, Nav, Row, Col } from "react-bootstrap";
+import { Container, Nav, Row, Col, Navbar } from "react-bootstrap";
 
 export default function Navigation() {
   return (
     <Container className="navContainer">
       <Row>
         <Col>
-          <Nav className="navBar">
+          <Navbar className="navBar sticky-nav">
             <Nav.Item>
-              <Nav.Link href="/home">
+              <Nav.Link className="homeIcon" href="/home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -21,7 +21,7 @@ export default function Navigation() {
                 </svg>
               </Nav.Link>
             </Nav.Item>
-          </Nav>
+          </Navbar>
         </Col>
       </Row>
     </Container>
