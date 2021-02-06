@@ -23,7 +23,8 @@ export default function HomeCard() {
               </svg>
             </Card.Title>
             <Card.Text className="gameDesc">
-              Test your knowledge by guessing the country of this landmark.
+              Test your knowledge by guessing the country or location of this
+              landmark.
             </Card.Text>
             <div className="btnContainer">
               <Link to={"/landmark"}>
