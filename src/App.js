@@ -10,12 +10,25 @@ import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
 
 var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length)];
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
 
 function App() {
-  const [state, setState] = useState(randLandmark);
+  const [randomIndexLandmark, setRandomIndexLandmark] = useState(randLandmark);
+  const newShuffledArray = shuffleArray(landmarks);
 
-  function next() {
-    setState(landmarks[Math.floor(Math.random() * landmarks.length)]);
+  function nextLandmarkIndex() {
+    setRandomIndexLandmark(
+      newShuffledArray[Math.floor(Math.random() * newShuffledArray.length)]
+    );
   }
 
   return (
@@ -24,11 +37,15 @@ function App() {
       <Title />
       <Switch>
         <Route exact path="/landmark">
-          <LandmarkCard key={state.id} image={state.image} />
+          <LandmarkCard
+            key={randomIndexLandmark.id}
+            image={randomIndexLandmark.image}
+            name={randomIndexLandmark.name}
+          />
           <Row className="btnRow">
             <Button
               onClick={() => {
-                next();
+                nextLandmarkIndex();
               }}
             >
               Next
