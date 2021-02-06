@@ -44,6 +44,7 @@ function App() {
           />
           <Row className="btnRow">
             <Button
+              id="nextBtn"
               onClick={() => {
                 nextLandmarkIndex();
               }}
@@ -51,7 +52,6 @@ function App() {
               Next
             </Button>
           </Row>
-          );)
         </Route>
         <Route path="/" component={HomeCard} />
       </Switch>

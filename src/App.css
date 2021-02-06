@@ -7,7 +7,7 @@ body {
 
 /* Navbar */
 .navContainer {
-  max-width: 600px;
+  max-width: 660px;
 }
 
 .navBar {
@@ -32,16 +32,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.5em;
 }
 
 .gameCard,
 .landmarkCard {
   width: 24rem;
-  height: 30rem;
+  height: 28rem;
+  margin-left: 0.5em;
   color: white;
   font-size: 1.5rem;
-  background-color: #343434;
+  background-color: #494949;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,12 +72,25 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   width: 100%;
-  height: 300px;
+  height: 260px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 600px) {
   body {
+    width: 100%;
     height: 100%;
+  }
+
+  .homeIcon {
+    margin-left: -2em;
+  }
+
+  .cardRow,
+  .btnRow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
   .footer {
     background-size: cover;
@@ -98,13 +111,16 @@ body {
   .gameCard,
   .landmarkCard {
     width: 18rem;
-    height: 26rem;
-    margin: 1em 0.5em 1em 0em;
+    height: 20rem;
+    margin: 1em 0.5em 1em 1.5em;
   }
 
   #gameTitle {
-    font-size: 1.35em;
+    font-size: 1.25em;
     font-weight: 700;
+  }
+  #nextBtn {
+    margin-left: 2em !important;
   }
 }
 
@@ -112,15 +128,19 @@ body {
 
 .btnRow {
   width: 100%;
-  margin-top: 1em;
+  margin-top: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#nextBtn {
+  margin-left: 0.5em;
+}
+
 button {
   font-family: "Roboto", sans-serif;
-  width: 200px;
+  width: 185px;
   font-size: 16px;
   position: relative;
   outline: none;
@@ -133,7 +153,6 @@ button {
   -ms-user-select: none;
   user-select: none;
   padding: 0.75em 1.75em;
-  border-radius: 50px !important;
   display: inline-block;
   color: #fff;
 
@@ -151,12 +170,3 @@ button {
 button:hover {
   transform: scale(1.1);
 }
-
-/* button:hover::after {
-  //Changing blur effect 
-  -webkit-filter: blur(4px);
-  -moz-filter: blur(4px);
-  -o-filter: blur(4px);
-  -ms-filter: blur(4px);
-  filter: blur(4px);
-} */
