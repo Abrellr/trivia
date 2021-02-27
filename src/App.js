@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Title from "./components/Title";
 import HomeCard from "./components/HomeCard";
 import LandmarkCard from "./components/LandmarkCard";
+import PlayDiceCard from "./components/PlayDiceCard";
 import "./App.css";
 import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
@@ -56,6 +57,7 @@ function App() {
               Next
             </Button>
           </Row>
+          <Route exact path="/throwDice" component={PlayDiceCard} />
         </Route>
         <Route path="/" component={HomeCard} />
       </Switch>
