@@ -20,15 +20,19 @@ function shuffleArray(array) {
   }
   return array;
 }
-
 function App() {
+  //set the initial state with a random index
   const [randomIndexLandmark, setRandomIndexLandmark] = useState(randLandmark);
-  const newShuffledArray = shuffleArray(landmarks);
 
   function nextLandmarkIndex() {
-    setRandomIndexLandmark(
-      newShuffledArray[Math.floor(Math.random() * newShuffledArray.length)]
-    );
+    //onClick will loop through the shuffled array and pass the index
+    let newShuffledArray = shuffleArray(landmarks);
+    if (newShuffledArray) {
+      let i = 0;
+      for (; i < newShuffledArray.length; i++) {
+        setRandomIndexLandmark(newShuffledArray[i]);
+      }
+    }
   }
 
   return (
