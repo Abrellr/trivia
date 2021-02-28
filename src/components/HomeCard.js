@@ -6,7 +6,7 @@ export default function HomeCard() {
   return (
     <Container fluid>
       <Carousel>
-        <Carousel.Item className="carouselItem" interval={1000}>
+        <Carousel.Item className="carouselItem" interval={200000}>
           <Row className="cardRow">
             <Card className="gameCard">
               <Card.Body>

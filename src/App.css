@@ -35,7 +35,8 @@ body {
 }
 
 .gameCard,
-.landmarkCard {
+.landmarkCard,
+.playDiceCard {
   width: 20rem;
   height: 24rem;
   margin-left: 0.5em;

@@ -10,7 +10,7 @@ import "./App.css";
 import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
 
-var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length)];
+var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length) + 1];
 function shuffleArray(array) {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -57,8 +57,8 @@ function App() {
               Next
             </Button>
           </Row>
-          <Route exact path="/throwDice" component={PlayDiceCard} />
         </Route>
+        <Route exact path="/playDice" component={PlayDiceCard} />
         <Route path="/" component={HomeCard} />
       </Switch>
       <Footer />
