@@ -9,26 +9,32 @@ const diceTwo = [
   {
     id: 1,
     image: dice1,
+    name: "two1",
   },
   {
     id: 2,
     image: dice2,
+    name: "two2",
   },
   {
     id: 3,
     image: dice3,
+    name: "two3",
   },
   {
     id: 4,
     image: dice4,
+    name: "two4",
   },
   {
     id: 5,
     image: dice5,
+    name: "two5",
   },
   {
     id: 6,
     image: dice6,
+    name: "two6",
   },
 ];
 
