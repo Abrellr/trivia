@@ -5,11 +5,15 @@ import Footer from "./components/Footer";
 import Title from "./components/Title";
 import HomeCard from "./components/HomeCard";
 import LandmarkCard from "./components/LandmarkCard";
+import PlayDiceCard from "./components/PlayDiceCard";
 import "./App.css";
 import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
 
-var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length)];
+//randomize the first image after clicking play
+var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length) + 1];
+
+//the fisher yates algorithm that will be triggered after clicking next button
 function shuffleArray(array) {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -21,14 +25,22 @@ function shuffleArray(array) {
   return array;
 }
 
+//set the initial dice index
+//var initDice = diceOne[5];
+
 function App() {
+  //set the initial state for landmark
   const [randomIndexLandmark, setRandomIndexLandmark] = useState(randLandmark);
-  const newShuffledArray = shuffleArray(landmarks);
 
   function nextLandmarkIndex() {
-    setRandomIndexLandmark(
-      newShuffledArray[Math.floor(Math.random() * newShuffledArray.length)]
-    );
+    //onClick will loop through the shuffled array and pass the index
+    let newShuffledArray = shuffleArray(landmarks);
+    if (newShuffledArray) {
+      let i = 0;
+      for (; i < newShuffledArray.length; i++) {
+        setRandomIndexLandmark(newShuffledArray[i]);
+      }
+    }
   }
 
   return (
@@ -53,6 +65,7 @@ function App() {
             </Button>
           </Row>
         </Route>
+        <Route exact path="/playDice" component={PlayDiceCard} />
         <Route path="/" component={HomeCard} />
       </Switch>
       <Footer />

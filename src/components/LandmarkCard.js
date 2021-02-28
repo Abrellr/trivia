@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Card } from "react-bootstrap";
 
 export default function LandmarkCard(props) {
-  console.log(props.image);
+  //console.log(props.image);
   return (
     <Container fluid>
       <Row className="cardRow">
