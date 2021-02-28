@@ -178,3 +178,8 @@ button {
 button:hover {
   transform: scale(1.1);
 }
+
+.diceImg {
+  width: 50px;
+  margin: 2em;
+}

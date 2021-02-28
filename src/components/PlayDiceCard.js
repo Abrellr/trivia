@@ -1,19 +1,36 @@
 import React from "react";
-import { Container, Row, Card } from "react-bootstrap";
+import { Container, Row, Card, Button } from "react-bootstrap";
 
-export default function PlayDiceCard() {
-  // let randomNumber1 = diceOne[Math.floor(Math.random() * 6) + 1];
-
-  // let randomNumber2 = diceTwo[Math.floor(Math.random() * 6) + 1];
-
+export default function PlayDiceCard({
+  diceOneIndex,
+  diceTwoIndex,
+  key,
+  nextDiceIndex,
+}) {
   return (
     <Container fluid>
       <Row className="cardRow">
         <Card className="playDiceCard">
           <Card.Body>
-            <Card.Title>Coming Soon!</Card.Title>
+            <img
+              key={key}
+              className="diceImg"
+              src={diceOneIndex}
+              alt="diceOne"
+            />
+            <img
+              key={key}
+              className="diceImg"
+              src={diceTwoIndex}
+              alt="diceTwo"
+            />
           </Card.Body>
         </Card>
+      </Row>
+      <Row className="btnRow">
+        <Button id="nextBtn" onClick={nextDiceIndex}>
+          Next
+        </Button>
       </Row>
     </Container>
   );

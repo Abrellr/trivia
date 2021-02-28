@@ -9,8 +9,13 @@ import PlayDiceCard from "./components/PlayDiceCard";
 import "./App.css";
 import landmarks from "./data/landmarks.js";
 import { Switch, Route } from "react-router-dom";
+import diceOne from "./data/diceOne.js";
+import diceTwo from "./data/diceTwo.js";
 
+//randomize the first image after clicking play
 var randLandmark = landmarks[Math.floor(Math.random() * landmarks.length) + 1];
+
+//the fisher yates algorithm that will be triggered after clicking next button
 function shuffleArray(array) {
   let i = array.length - 1;
   for (; i > 0; i--) {
@@ -21,9 +26,16 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+//set the initial dice index
+var initDice = diceOne[5];
+
 function App() {
-  //set the initial state with a random index
+  //set the initial state for landmark
   const [randomIndexLandmark, setRandomIndexLandmark] = useState(randLandmark);
+  //set the initial state for dice image
+  const [diceOneIndex, setDiceOneIndex] = useState(initDice);
+  const [diceTwoIndex, setDiceTwoIndex] = useState(initDice);
 
   function nextLandmarkIndex() {
     //onClick will loop through the shuffled array and pass the index
@@ -34,6 +46,11 @@ function App() {
         setRandomIndexLandmark(newShuffledArray[i]);
       }
     }
+  }
+
+  function nextDiceIndex() {
+    setDiceOneIndex(diceOne[Math.floor(Math.random() * 6)]);
+    setDiceTwoIndex(diceTwo[Math.floor(Math.random() * 6)]);
   }
 
   return (
@@ -58,7 +75,19 @@ function App() {
             </Button>
           </Row>
         </Route>
-        <Route exact path="/playDice" component={PlayDiceCard} />
+        <Route
+          exact
+          path="/playDice"
+          render={(props) => (
+            <PlayDiceCard
+              key={initDice.id}
+              diceOneIndex={diceOneIndex.image}
+              diceTwoIndex={diceTwoIndex.image}
+              nextDiceIndex={() => nextDiceIndex()}
+              {...props}
+            />
+          )}
+        />
         <Route path="/" component={HomeCard} />
       </Switch>
       <Footer />

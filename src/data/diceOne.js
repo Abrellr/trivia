@@ -31,3 +31,5 @@ const diceOne = [
     image: dice6,
   },
 ];
+
+export default diceOne;

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 export default function HomeCard() {
   return (
     <Container fluid>
-      <Carousel>
-        <Carousel.Item className="carouselItem" interval={200000}>
+      <Carousel slide={false} fade={false}>
+        <Carousel.Item className="carouselItem">
           <Row className="cardRow">
             <Card className="gameCard">
               <Card.Body>
