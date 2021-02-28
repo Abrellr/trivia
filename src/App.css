@@ -179,7 +179,22 @@ button:hover {
   transform: scale(1.1);
 }
 
+/* DICEE section */
+
 .diceImg {
   width: 50px;
   margin: 2em;
+}
+
+.winnerText {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  color: white;
+  margin-left: -0.5em;
+}
+
+.player {
+  font-size: 2rem;
+  color: white;
+  font-family: "Indie Flower", cursive;
 }

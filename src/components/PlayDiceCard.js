@@ -15,11 +15,21 @@ export default function PlayDiceCard() {
     setDiceTwoIndex(Math.floor(Math.random() * 6));
   }
 
+  function setWinner() {
+    if (diceOneIndex > diceTwoIndex) {
+      return "🚩 Player one wins!";
+    } else if (diceTwoIndex > diceOneIndex) {
+      return "🚩 Player two wins!";
+    } else {
+      return "Draw!";
+    }
+  }
+
   return (
     <Container fluid>
-      {/* <Row>
-        <h3>Player x wins!</h3>
-      </Row> */}
+      <Row className="justify-content-center">
+        <h3 className="winnerText">{setWinner()}</h3>
+      </Row>
       <Row className="cardRow">
         <Card className="playDiceCard">
           <Card.Body>
@@ -36,7 +46,7 @@ export default function PlayDiceCard() {
       </Row>
       <Row className="btnRow">
         <Button id="nextBtn" onClick={() => nextDiceIndex()}>
-          Next
+          Refresh me!
         </Button>
       </Row>
     </Container>
