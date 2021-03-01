@@ -9,8 +9,18 @@ export default function PlayDiceCard() {
   //set the initial state for dice image
   const [diceOneIndex, setDiceOneIndex] = useState(0);
   const [diceTwoIndex, setDiceTwoIndex] = useState(0);
+  const [scorePlayer1, setScorePlayer1] = useState(0);
+  const [scorePlayer2, setScorePlayer2] = useState(0);
 
   function nextDiceIndex() {
+    if (diceOneIndex > diceTwoIndex) {
+      setScorePlayer1(scorePlayer1 + 1);
+    } else if (diceTwoIndex > diceOneIndex) {
+      setScorePlayer2(scorePlayer2 + 1);
+    } else if (diceTwoIndex === diceOneIndex) {
+      setScorePlayer2(scorePlayer2 + 0);
+      setScorePlayer1(scorePlayer1 + 0);
+    }
     setDiceOneIndex(Math.floor(Math.random() * 6));
     setDiceTwoIndex(Math.floor(Math.random() * 6));
   }
@@ -30,6 +40,10 @@ export default function PlayDiceCard() {
       <Row className="justify-content-center">
         <h3 className="winnerText">{setWinner()}</h3>
       </Row>
+      <Row>
+        <p>Player 1 score: {scorePlayer1}</p>
+        <p>Player 2 score: {scorePlayer2}</p>
+      </Row>
       <Row className="cardRow">
         <Card className="playDiceCard">
           <Card.Body>
@@ -45,7 +59,13 @@ export default function PlayDiceCard() {
         </Card>
       </Row>
       <Row className="btnRow">
-        <Button id="nextBtn" onClick={() => nextDiceIndex()}>
+        <Button
+          id="nextBtn"
+          onClick={() => {
+            //counter();
+            nextDiceIndex();
+          }}
+        >
           Refresh me!
         </Button>
       </Row>
