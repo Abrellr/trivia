@@ -54,6 +54,11 @@ function App() {
             image={randomIndexLandmark.image}
             name={randomIndexLandmark.name}
           />
+          {/* <LandmarkAnswer
+            key={randomIndexLandmark.id}
+            name={randomIndexLandmark.name}
+            location={randomIndexLandmark.location}
+          /> */}
           <Row className="btnRow">
             <Button
               id="nextBtn"

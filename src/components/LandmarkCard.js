@@ -2,18 +2,20 @@ import React from "react";
 import { Container, Row, Card } from "react-bootstrap";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-const renderTime = ({ remainingTime }) => {
-  if (remainingTime === 0) {
-    return <h3 className="timesUp">Time's up!</h3>;
-  }
-  return (
-    <div className="timer">
-      <div className="text">Remaining</div>
-      <div className="value">{remainingTime}</div>
-      <div className="text">seconds</div>
-    </div>
-  );
-};
+// const renderTime = ({ remainingTime }) => {
+//   if (remainingTime === 0) {
+//     return <p className="timesUp">Time's up!</p>;
+//   }
+//   return (
+//     <Container className="justify-content-center">
+//       <div className="justify-content-center mt-5">
+//         <h4>Remaining</h4>
+//       </div>
+//       <div className="justify-content-center">{remainingTime}</div>
+//       <p className="mt-5">seconds</p>
+//     </Container>
+//   );
+// };
 
 export default function LandmarkCard(props) {
   //console.log(props.image);
@@ -26,15 +28,17 @@ export default function LandmarkCard(props) {
           </Card.Body>
         </Card>
       </Row>
-      <Row>
-        <CountdownCircleTimer
+      <Row className="justify-content-center mt-5">
+        {/* <CountdownCircleTimer
           isPlaying
-          duration={30}
+          duration={5}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
-          onComplete={() => [true, 3000]}
+          onComplete={() => [true, 20000]}
+          size={50}
+          strokeWidth={6}
         >
           {renderTime}
-        </CountdownCircleTimer>
+        </CountdownCircleTimer> */}
       </Row>
     </Container>
   );
