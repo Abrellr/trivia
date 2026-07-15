@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Card } from "react-bootstrap";
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 // const renderTime = ({ remainingTime }) => {
 //   if (remainingTime === 0) {
