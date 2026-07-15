@@ -20,12 +20,9 @@ export default function PlayDiceCard() {
   //setScore will be triggered each time dice Index changes
   useEffect(() => {
     if (diceOneIndex > diceTwoIndex) {
-      setScorePlayer1(scorePlayer1 + 1);
+      setScorePlayer1((prevScore) => prevScore + 1);
     } else if (diceTwoIndex > diceOneIndex) {
-      setScorePlayer2(scorePlayer2 + 1);
-    } else if (diceTwoIndex === diceOneIndex) {
-      setScorePlayer2(scorePlayer2 + 0);
-      setScorePlayer1(scorePlayer1 + 0);
+      setScorePlayer2((prevScore) => prevScore + 1);
     }
   }, [diceOneIndex, diceTwoIndex]);
 
